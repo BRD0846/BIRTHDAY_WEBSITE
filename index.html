@@ -1,102 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Birthday ❤️</title>
-/* ===== MÀN HÌNH MỞ ĐẦU ===== */
 
-.gift-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: radial-gradient(circle at center, #3b1d2d 0%, #120b10 55%, #050505 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: opacity 1s ease, visibility 1s ease;
-}
 
-.gift-screen.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.gift-content {
-    padding: 30px;
-    animation: giftAppear 1.5s ease;
-}
-
-.gift-icon {
-    font-size: 110px;
-    margin-bottom: 25px;
-    animation: giftFloat 2.5s ease-in-out infinite;
-}
-
-.gift-title {
-    font-size: clamp(28px, 7vw, 52px);
-    margin-bottom: 15px;
-    color: white;
-}
-
-.gift-subtitle {
-    font-size: clamp(17px, 4vw, 24px);
-    color: #ddd;
-    margin-bottom: 40px;
-}
-
-.open-gift {
-    border: none;
-    padding: 17px 35px;
-    border-radius: 50px;
-    background: white;
-    color: #301a25;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 10px 35px rgba(255,255,255,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.open-gift:hover {
-    transform: scale(1.08);
-    box-shadow: 0 15px 45px rgba(255,255,255,0.25);
-}
-
-@keyframes giftFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(3deg);
-    }
-}
-
-@keyframes giftAppear {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             font-family: Arial, sans-serif;
@@ -105,364 +35,997 @@
             overflow-x: hidden;
         }
 
-        .scene {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 25px;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .scene-1 {
-            background: linear-gradient(180deg, #090909, #25151f);
-        }
 
-        .scene-2 {
-            background: linear-gradient(180deg, #25151f, #5a3048);
-        }
+        /* =========================
+           MÀN HÌNH MỞ ĐẦU
+        ========================= */
 
-        .scene-3 {
-            background: linear-gradient(180deg, #5a3048, #251f35);
-        }
+        .gift-screen {
 
-        .scene-4 {
-            background: linear-gradient(180deg, #251f35, #151515);
-        }
-
-        .scene-5 {
-            background: linear-gradient(180deg, #151515, #301a25);
-        }
-
-        .scene-6 {
-            background: linear-gradient(180deg, #301a25, #090909);
-        }
-
-        .content {
-            max-width: 800px;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1.2s ease;
-        }
-
-        .content.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h1 {
-            font-size: clamp(42px, 10vw, 90px);
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            font-size: clamp(30px, 7vw, 60px);
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: clamp(18px, 4vw, 28px);
-            line-height: 1.8;
-            color: #eee;
-        }
-
-        .arrow {
-            margin-top: 60px;
-            font-size: 35px;
-            animation: bounce 1.5s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(15px);
-            }
-        }
-
-        .cake {
-            font-size: 120px;
-            margin: 30px 0;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .heart {
             position: fixed;
-            font-size: 25px;
-            animation: heartFloat 6s linear infinite;
-            opacity: 0.7;
-            pointer-events: none;
-            z-index: 10;
+
+            inset: 0;
+
+            z-index: 1000;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #3b1d2d 0%,
+                    #120b10 55%,
+                    #050505 100%
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+
         }
 
-        @keyframes heartFloat {
-            from {
-                transform: translateY(110vh);
-                opacity: 0;
+
+        .gift-screen.hide {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        .gift-content {
+
+            width: 90%;
+
+            max-width: 700px;
+
+            padding: 30px;
+
+            animation:
+                giftAppear 1.5s ease;
+
+        }
+
+
+        .gift-icon {
+
+            font-size: 110px;
+
+            margin-bottom: 25px;
+
+            animation:
+                giftFloat 2.5s ease-in-out infinite;
+
+        }
+
+
+        .gift-title {
+
+            font-size:
+                clamp(28px, 7vw, 52px);
+
+            line-height: 1.3;
+
+            margin-bottom: 15px;
+
+            color: white;
+
+        }
+
+
+        .gift-subtitle {
+
+            font-size:
+                clamp(17px, 4vw, 24px);
+
+            line-height: 1.6;
+
+            color: #ddd;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .open-gift {
+
+            border: none;
+
+            padding:
+                17px 35px;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #301a25;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 35px
+                rgba(255,255,255,0.15);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .open-gift:hover {
+
+            transform:
+                scale(1.08);
+
+            box-shadow:
+                0 15px 45px
+                rgba(255,255,255,0.25);
+
+        }
+
+
+        @keyframes giftFloat {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
             }
 
-            30% {
-                opacity: 0.7;
+            50% {
+
+                transform:
+                    translateY(-15px)
+                    rotate(3deg);
+
+            }
+
+        }
+
+
+        @keyframes giftAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+
             }
 
             to {
-                transform: translateY(-20vh);
-                opacity: 0;
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
             }
+
         }
-.birthday-photo {
-    width: min(85vw, 500px);
-    max-height: 65vh;
-    object-fit: cover;
-    border-radius: 20px;
-    margin: 30px auto;
-    display: block;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
+
+
+
+        /* =========================
+           CÁC CẢNH
+        ========================= */
+
+        .scene {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding:
+                40px 25px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .scene-1 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #090909,
+                    #25151f
+                );
+
+        }
+
+
+        .scene-2 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #25151f,
+                    #5a3048
+                );
+
+        }
+
+
+        .scene-3 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #5a3048,
+                    #251f35
+                );
+
+        }
+
+
+        .scene-4 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #251f35,
+                    #151515
+                );
+
+        }
+
+
+        .scene-5 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #151515,
+                    #301a25
+                );
+
+        }
+
+
+        .scene-6 {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #301a25,
+                    #090909
+                );
+
+        }
+
+
+
+        /* =========================
+           NỘI DUNG
+        ========================= */
+
+        .content {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            opacity: 0;
+
+            transform:
+                translateY(60px);
+
+            transition:
+                all 1.2s ease;
+
+        }
+
+
+        .content.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(42px, 10vw, 90px);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        h2 {
+
+            font-size:
+                clamp(30px, 7vw, 60px);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        p {
+
+            font-size:
+                clamp(18px, 4vw, 28px);
+
+            line-height: 1.8;
+
+            color: #eee;
+
+        }
+
+
+
+        /* =========================
+           ẢNH
+        ========================= */
+
+        .birthday-photo {
+
+            width:
+                min(85vw, 500px);
+
+            max-height:
+                65vh;
+
+            object-fit:
+                cover;
+
+            border-radius:
+                20px;
+
+            margin:
+                30px auto;
+
+            display:
+                block;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.4);
+
+        }
+
+
+
+        /* =========================
+           MŨI TÊN
+        ========================= */
+
+        .arrow {
+
+            margin-top:
+                60px;
+
+            font-size:
+                35px;
+
+            animation:
+                bounce 1.5s infinite;
+
+        }
+
+
+        @keyframes bounce {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(15px);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           BÁNH SINH NHẬT
+        ========================= */
+
+        .cake {
+
+            font-size:
+                120px;
+
+            margin:
+                30px 0;
+
+            animation:
+                float 3s ease-in-out infinite;
+
+        }
+
+
+        @keyframes float {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-15px);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           TÊN
+        ========================= */
+
         .name {
-            font-size: clamp(45px, 12vw, 100px);
-            margin: 20px 0;
+
+            font-size:
+                clamp(45px, 12vw, 100px);
+
+            margin:
+                20px 0;
+
         }
+
 
         .final {
-            font-size: clamp(20px, 5vw, 32px);
-            line-height: 1.8;
+
+            font-size:
+                clamp(20px, 5vw, 32px);
+
+            line-height:
+                1.8;
+
         }
 
+
+
+        /* =========================
+           NÚT XEM LẠI
+        ========================= */
+
         .replay {
-            display: inline-block;
-            margin-top: 50px;
-            padding: 14px 25px;
-            border: 1px solid white;
-            border-radius: 30px;
-            color: white;
-            text-decoration: none;
+
+            display:
+                inline-block;
+
+            margin-top:
+                50px;
+
+            padding:
+                14px 25px;
+
+            border:
+                1px solid white;
+
+            border-radius:
+                30px;
+
+            color:
+                white;
+
+            text-decoration:
+                none;
+
         }
+
+
+
+        /* =========================
+           TRÁI TIM BAY
+        ========================= */
+
+        .heart {
+
+            position:
+                fixed;
+
+            font-size:
+                25px;
+
+            animation:
+                heartFloat 6s linear infinite;
+
+            opacity:
+                0.7;
+
+            pointer-events:
+                none;
+
+            z-index:
+                10;
+
+        }
+
+
+        @keyframes heartFloat {
+
+            from {
+
+                transform:
+                    translateY(110vh);
+
+                opacity:
+                    0;
+
+            }
+
+            30% {
+
+                opacity:
+                    0.7;
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-20vh);
+
+                opacity:
+                    0;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 
 <body>
 
-    <!-- CẢNH 1 -->
+
+    <!-- =========================
+         MÀN HÌNH MỞ ĐẦU
+    ========================= -->
+
+    <div
+        class="gift-screen"
+        id="giftScreen"
+    >
+
+        <div class="gift-content">
+
+            <div class="gift-icon">
+                🎁
+            </div>
+
+            <h1 class="gift-title">
+                Có một món quà<br>
+                dành cho bạn...
+            </h1>
+
+            <p class="gift-subtitle">
+                Nhưng bạn phải tự tay mở nó nhé ❤️
+            </p>
+
+            <button
+                class="open-gift"
+                onclick="openGift()"
+            >
+                🎁 Mở món quà
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         CẢNH 1
+    ========================= -->
+
     <section class="scene scene-1">
+
         <div class="content">
 
-            <h2>Có một điều...</h2>
+            <h2>
+                Có một điều...
+            </h2>
 
             <p>
                 Tôi muốn nói với bạn hôm nay.
             </p>
 
-            <div class="arrow">↓</div>
+            <div class="arrow">
+                ↓
+            </div>
 
         </div>
+
     </section>
 
 
-    <!-- CẢNH 2 -->
+
+    <!-- =========================
+         CẢNH 2
+    ========================= -->
+
     <section class="scene scene-2">
+
         <div class="content">
 
-            <h2>Hôm nay...</h2>
+            <h2>
+                Hôm nay...
+            </h2>
 
             <p>
                 không phải là một ngày bình thường.
             </p>
 
-            <div class="arrow">↓</div>
+            <div class="arrow">
+                ↓
+            </div>
 
         </div>
+
     </section>
 
 
-    <!-- CẢNH 3 -->
-<section class="scene scene-3">
 
-    <div class="content">
+    <!-- =========================
+         CẢNH 3
+    ========================= -->
 
-        <p>
-            Bởi vì hôm nay...
-        </p>
+    <section class="scene scene-3">
 
-        <img src="Photo 2022-1.jpg" class="birthday-photo">
+        <div class="content">
 
-        <h1>là ngày đặc biệt.</h1>
+            <p>
+                Bởi vì hôm nay...
+            </p>
 
-        <div class="arrow">↓</div>
+            <img
+                src="Photo 2022-1.jpg"
+                class="birthday-photo"
+                alt="Kỷ niệm"
+            >
 
-    </div>
+            <h1>
+                là ngày đặc biệt.
+            </h1>
 
-</section>
+            <div class="arrow">
+                ↓
+            </div>
 
+        </div>
 
-   <!-- CẢNH 4 -->
-<section class="scene scene-4">
-
-    <div class="content">
-
-        <h2>Những khoảnh khắc đáng nhớ ❤️</h2>
-
-        <img src="Photo 2022-2.jpg" class="birthday-photo">
-
-        <p>
-            Có những khoảnh khắc...
-            dù rất đơn giản,
-            nhưng chúng ta luôn muốn giữ lại.
-        </p>
-
-        <img src="Photo 2022-3.jpg" class="birthday-photo">
-
-        <div class="arrow">↓</div>
-
-    </div>
-
-</section>
+    </section>
 
 
-    <!-- CẢNH 5 -->
+
+    <!-- =========================
+         CẢNH 4
+    ========================= -->
+
+    <section class="scene scene-4">
+
+        <div class="content">
+
+            <h2>
+                Những khoảnh khắc đáng nhớ ❤️
+            </h2>
+
+            <img
+                src="Photo 2022-2.jpg"
+                class="birthday-photo"
+                alt="Kỷ niệm"
+            >
+
+            <p>
+                Có những khoảnh khắc...
+                dù rất đơn giản,
+                nhưng chúng ta luôn muốn giữ lại.
+            </p>
+
+            <img
+                src="Photo 2022-3.jpg"
+                class="birthday-photo"
+                alt="Kỷ niệm"
+            >
+
+            <div class="arrow">
+                ↓
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CẢNH 5
+    ========================= -->
+
     <section class="scene scene-5">
+
         <div class="content">
 
             <p>
                 Và điều tôi muốn nói nhất là...
             </p>
 
-            <h1>Happy Birthday ❤️</h1>
+            <h1>
+                Happy Birthday ❤️
+            </h1>
 
-            <div class="arrow">↓</div>
+            <div class="arrow">
+                ↓
+            </div>
 
         </div>
+
     </section>
 
 
-    <!-- CẢNH 6 -->
+
+    <!-- =========================
+         CẢNH 6
+    ========================= -->
+
     <section class="scene scene-6">
+
         <div class="content">
 
-            <div class="cake">🎂</div>
+            <div class="cake">
+                🎂
+            </div>
 
-            <h1 class="name">[TÊN]</h1>
+            <h1 class="name">
+                [TÊN]
+            </h1>
 
             <p class="final">
+
                 Chúc bạn có một tuổi mới
                 thật nhiều niềm vui,
                 thật nhiều hạnh phúc
                 và thật nhiều điều tốt đẹp.
+
             </p>
 
-            <a href="#" class="replay">
+            <a
+                href="#"
+                class="replay"
+                onclick="replayGift(event)"
+            >
                 ↻ Xem lại từ đầu
             </a>
 
         </div>
+
     </section>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
     <script>
 
-        // HIỆU ỨNG HIỆN NỘI DUNG KHI KÉO XUỐNG
 
-        const contents = document.querySelectorAll(".content");
+        /* =========================
+           HIỆN NỘI DUNG KHI CUỘN
+        ========================= */
 
-        const observer = new IntersectionObserver(
-            (entries) => {
+        const contents =
+            document.querySelectorAll(
+                ".content"
+            );
 
-                entries.forEach(entry => {
 
-                    if (entry.isIntersecting) {
+        const observer =
+            new IntersectionObserver(
 
-                        entry.target.classList.add("show");
+                (entries) => {
 
-                    }
+                    entries.forEach(
+                        entry => {
 
-                });
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-            },
-            {
-                threshold: 0.25
+                                entry.target
+                                    .classList
+                                    .add("show");
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.25
+                }
+
+            );
+
+
+        contents.forEach(
+            content => {
+
+                observer.observe(
+                    content
+                );
+
             }
         );
 
-        contents.forEach(content => {
-            observer.observe(content);
-        });
 
 
-        // TẠO TRÁI TIM BAY
+        /* =========================
+           MỞ MÓN QUÀ
+        ========================= */
 
-        function createHeart() {
+        function openGift() {
 
-            const heart = document.createElement("div");
+            const giftScreen =
+                document.getElementById(
+                    "giftScreen"
+                );
 
-            heart.className = "heart";
 
-            heart.innerHTML = "❤️";
+            giftScreen.classList.add(
+                "hide"
+            );
 
-            heart.style.left = Math.random() * 100 + "vw";
 
-            heart.style.animationDuration =
-                (4 + Math.random() * 5) + "s";
-
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 9000);
+            document.body.style.overflow =
+                "auto";
 
         }
 
-        setInterval(createHeart, 900);
-// MỞ MÓN QUÀ
 
-function openGift() {
 
-    const giftScreen = document.getElementById("giftScreen");
+        /* =========================
+           XEM LẠI TỪ ĐẦU
+        ========================= */
 
-    giftScreen.classList.add("hide");
+        function replayGift(event) {
 
-    document.body.style.overflow = "auto";
+            event.preventDefault();
 
-}
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+
+            setTimeout(
+                function() {
+
+                    const giftScreen =
+                        document.getElementById(
+                            "giftScreen"
+                        );
+
+
+                    giftScreen.classList.remove(
+                        "hide"
+                    );
+
+                },
+                700
+            );
+
+        }
+
+
+
+        /* =========================
+           TRÁI TIM BAY
+        ========================= */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "heart";
+
+
+            heart.innerHTML =
+                "❤️";
+
+
+            heart.style.left =
+                Math.random() * 100 +
+                "vw";
+
+
+            heart.style.animationDuration =
+                (
+                    4 +
+                    Math.random() * 5
+                ) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                () => {
+
+                    heart.remove();
+
+                },
+                9000
+            );
+
+        }
+
+
+        setInterval(
+            createHeart,
+            900
+        );
+
+
     </script>
 
+
 </body>
-    <!-- MÀN HÌNH MỞ ĐẦU -->
 
-<div class="gift-screen" id="giftScreen">
-
-    <div class="gift-content">
-
-        <div class="gift-icon">
-            🎁
-        </div>
-
-        <h1 class="gift-title">
-            Có một món quà dành cho bạn...
-        </h1>
-
-        <p class="gift-subtitle">
-            Nhưng bạn phải tự tay mở nó nhé ❤️
-        </p>
-
-        <button class="open-gift" onclick="openGift()">
-            🎁 Mở món quà
-        </button>
-
-    </div>
-
-</div>
 </html>
