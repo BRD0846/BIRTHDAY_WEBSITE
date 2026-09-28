@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .scene {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scene-1 {
+            background: linear-gradient(180deg, #090909, #25151f);
+        }
+
+        .scene-2 {
+            background: linear-gradient(180deg, #25151f, #5a3048);
+        }
+
+        .scene-3 {
+            background: linear-gradient(180deg, #5a3048, #251f35);
+        }
+
+        .scene-4 {
+            background: linear-gradient(180deg, #251f35, #151515);
+        }
+
+        .scene-5 {
+            background: linear-gradient(180deg, #151515, #301a25);
+        }
+
+        .scene-6 {
+            background: linear-gradient(180deg, #301a25, #090909);
+        }
+
+        .content {
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1.2s ease;
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: clamp(42px, 10vw, 90px);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: clamp(30px, 7vw, 60px);
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: clamp(18px, 4vw, 28px);
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        .arrow {
+            margin-top: 60px;
+            font-size: 35px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(15px);
+            }
+        }
+
+        .cake {
+            font-size: 120px;
+            margin: 30px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 25px;
+            animation: heartFloat 6s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes heartFloat {
+            from {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 0.7;
+            }
+
+            to {
+                transform: translateY(-20vh);
+                opacity: 0;
+            }
+        }
+
+        .name {
+            font-size: clamp(45px, 12vw, 100px);
+            margin: 20px 0;
+        }
+
+        .final {
+            font-size: clamp(20px, 5vw, 32px);
+            line-height: 1.8;
+        }
+
+        .replay {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 14px 25px;
+            border: 1px solid white;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CẢNH 1 -->
+    <section class="scene scene-1">
+        <div class="content">
+
+            <h2>Có một điều...</h2>
+
+            <p>
+                Tôi muốn nói với bạn hôm nay.
+            </p>
+
+            <div class="arrow">↓</div>
+
+        </div>
+    </section>
+
+
+    <!-- CẢNH 2 -->
+    <section class="scene scene-2">
+        <div class="content">
+
+            <h2>Hôm nay...</h2>
+
+            <p>
+                không phải là một ngày bình thường.
+            </p>
+
+            <div class="arrow">↓</div>
+
+        </div>
+    </section>
+
+
+    <!-- CẢNH 3 -->
+    <section class="scene scene-3">
+        <div class="content">
+
+            <p>
+                Bởi vì hôm nay...
+            </p>
+
+            <h1>là ngày đặc biệt.</h1>
+
+            <div class="arrow">↓</div>
+
+        </div>
+    </section>
+
+
+    <!-- CẢNH 4 -->
+    <section class="scene scene-4">
+        <div class="content">
+
+            <h2>🎂</h2>
+
+            <p>
+                Một ngày mà một người rất đặc biệt
+                được sinh ra.
+            </p>
+
+            <div class="arrow">↓</div>
+
+        </div>
+    </section>
+
+
+    <!-- CẢNH 5 -->
+    <section class="scene scene-5">
+        <div class="content">
+
+            <p>
+                Và điều tôi muốn nói nhất là...
+            </p>
+
+            <h1>Happy Birthday ❤️</h1>
+
+            <div class="arrow">↓</div>
+
+        </div>
+    </section>
+
+
+    <!-- CẢNH 6 -->
+    <section class="scene scene-6">
+        <div class="content">
+
+            <div class="cake">🎂</div>
+
+            <h1 class="name">[TÊN]</h1>
+
+            <p class="final">
+                Chúc bạn có một tuổi mới
+                thật nhiều niềm vui,
+                thật nhiều hạnh phúc
+                và thật nhiều điều tốt đẹp.
+            </p>
+
+            <a href="#" class="replay">
+                ↻ Xem lại từ đầu
+            </a>
+
+        </div>
+    </section>
+
+
+    <script>
+
+        // HIỆU ỨNG HIỆN NỘI DUNG KHI KÉO XUỐNG
+
+        const contents = document.querySelectorAll(".content");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.25
+            }
+        );
+
+        contents.forEach(content => {
+            observer.observe(content);
+        });
+
+
+        // TẠO TRÁI TIM BAY
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+
+        }
+
+        setInterval(createHeart, 900);
+
+    </script>
+
+</body>
+</html>
