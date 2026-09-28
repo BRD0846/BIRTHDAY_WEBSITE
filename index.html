@@ -5,7 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Happy Birthday ❤️</title>
+/* ===== MÀN HÌNH MỞ ĐẦU ===== */
 
+.gift-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: radial-gradient(circle at center, #3b1d2d 0%, #120b10 55%, #050505 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.gift-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.gift-content {
+    padding: 30px;
+    animation: giftAppear 1.5s ease;
+}
+
+.gift-icon {
+    font-size: 110px;
+    margin-bottom: 25px;
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+.gift-title {
+    font-size: clamp(28px, 7vw, 52px);
+    margin-bottom: 15px;
+    color: white;
+}
+
+.gift-subtitle {
+    font-size: clamp(17px, 4vw, 24px);
+    color: #ddd;
+    margin-bottom: 40px;
+}
+
+.open-gift {
+    border: none;
+    padding: 17px 35px;
+    border-radius: 50px;
+    background: white;
+    color: #301a25;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 35px rgba(255,255,255,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.open-gift:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 45px rgba(255,255,255,0.25);
+}
+
+@keyframes giftFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+@keyframes giftAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     <style>
         * {
             margin: 0;
@@ -345,8 +426,43 @@
         }
 
         setInterval(createHeart, 900);
+// MỞ MÓN QUÀ
 
+function openGift() {
+
+    const giftScreen = document.getElementById("giftScreen");
+
+    giftScreen.classList.add("hide");
+
+    document.body.style.overflow = "auto";
+
+}
     </script>
 
 </body>
+    <!-- MÀN HÌNH MỞ ĐẦU -->
+
+<div class="gift-screen" id="giftScreen">
+
+    <div class="gift-content">
+
+        <div class="gift-icon">
+            🎁
+        </div>
+
+        <h1 class="gift-title">
+            Có một món quà dành cho bạn...
+        </h1>
+
+        <p class="gift-subtitle">
+            Nhưng bạn phải tự tay mở nó nhé ❤️
+        </p>
+
+        <button class="open-gift" onclick="openGift()">
+            🎁 Mở món quà
+        </button>
+
+    </div>
+
+</div>
 </html>
